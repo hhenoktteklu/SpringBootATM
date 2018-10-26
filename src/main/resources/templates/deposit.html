@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Deposit</title>
+    <h4>Deposit</h4>
+</head>
+<body>
+<form th:action="@{/processdeposit}" th:object="${account}"  method="post">
+    Enter account number:<input type="number" th:field="*{accountNumber}"><br/>
+    Enter amount here:<input type="number" th:field="*{amount}"/>
+    <input type="submit" value="Deposit">
+</form>
+</body>
+</html>
+

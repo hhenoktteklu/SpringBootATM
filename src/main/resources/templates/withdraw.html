@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Withdraw</title>
+    <h4>Withdraw</h4>
+</head>
+<body>
+<form th:action="@{/processwithdraw}" th:object="${account}"  method="post">
+    Enter amount here:<input type="number" th:field="*{amount}"/>
+    <input type="submit" value="Withdraw">
+</form>
+</body>
+</html>

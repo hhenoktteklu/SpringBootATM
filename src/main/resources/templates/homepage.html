@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home page</title>
+    <h3>Welcome to Spring Boot Bank</h3>
+</head>
+<body><table>
+        <tr>
+            <th>Account</th>
+            <th>Balance</th>
+        </tr>
+        <tr th:each="account : ${account}">
+            <td th:text="${account.accountNumber}"></td>
+            <td th:text="${account.balance}"></td>
+            <td>
+                <a th:href="@{/deposit/{id} (id=${account.accountNumber})}">Make a deposit</a>
+            </td>
+            <td>
+                <a th:href="@{/withdraw/{id} (id=${account.accountNumber})}">Withdraw</a>
+            </td>
+            <td>
+                <a th:href="@{/transaction/{id}(id=${account.accountNumber})}">Transaction History</a>
+            </td>
+        </tr>
+    </table>
+    </body>
+    </html>
+<div>
+    <a th:href="@{/createaccount}">Create Account</a>
+</div>
+</body>
+</html>
